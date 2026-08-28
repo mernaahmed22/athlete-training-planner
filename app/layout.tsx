@@ -174,7 +174,7 @@ export default function RootLayout({
               aria-label="Mobile navigation"
               className="sticky bottom-0 z-10 border-t border-border bg-white px-2 py-2 lg:hidden"
             >
-              <div className="grid grid-cols-5 gap-1">
+              <div className="grid grid-cols-6 gap-1">
                 {navigation.map((item) => (
                   <Link
                     key={item.href}
@@ -191,6 +191,21 @@ export default function RootLayout({
                     <span>{item.label}</span>
                   </Link>
                 ))}
+
+                {/* Mobile System Status */}
+                <Link
+                  href="/health"
+                  className="flex flex-col items-center gap-1 rounded-xl px-1 py-2 text-[11px] font-medium text-secondary hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="text-base text-success"
+                  >
+                    ✓
+                  </span>
+
+                  <span>Status</span>
+                </Link>
               </div>
             </nav>
           </div>
